@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('time',function () {
+	return date('Y-m-d H:i:s');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 //后台
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
@@ -27,5 +28,10 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::get('/', 'HomeController@index');
-    Route::get('article', 'ArticleController@index');
+    Route::resource('article', 'ArticleController');
+
+	Route::get('article/{id}', 'ArticleController@show');
+Route::post('comment', 'CommentController@store');
+
+    
 });
