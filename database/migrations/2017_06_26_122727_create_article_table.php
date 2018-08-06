@@ -14,12 +14,18 @@ class CreateArticleTable extends Migration
     public function up()
     {
         //
-        Schema::create('articles',function(Blueprint $table){
-        $table->increments('id');
-        $table->string('title');
-        $table->text('body')->nullable();
-        $table->integer('user_id');
-        
+        Schema::create('article',function(Blueprint $table){
+        $table->increments('art_id');
+        $table->string('art_title');
+        $table->text('art_tag');
+        $table->integer('art_description');
+        $table->integer('art_thumb');
+        $table->integer('art_content');
+        $table->integer('art_time');
+        $table->integer('art_editor');
+        $table->integer('art_view');
+        $table->integer('cate_id');
+
         $table->timestamps();            
     });
     }
@@ -31,7 +37,7 @@ class CreateArticleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('article');
 
     }
 }

@@ -36,7 +36,7 @@ class Art extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('art');
+        Schema::dropIfExists('blog_art');
 
     }
 }

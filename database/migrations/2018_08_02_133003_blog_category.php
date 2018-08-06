@@ -13,7 +13,7 @@ class BlogCategory extends Migration
      */
     public function up()
     {
-        Schema::create('blog_category', function (Blueprint $table) {
+        Schema::create('category', function (Blueprint $table) {
 
 
             $table->increments('cate_id');
@@ -37,7 +37,7 @@ class BlogCategory extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('blog_category');
+        Schema::dropIfExists('category');
 
     }
 }

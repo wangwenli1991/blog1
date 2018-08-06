@@ -19,7 +19,7 @@ class Admin extends Migration
 
             $table->increments('admin_id');
             $table->string('admin_name');
-
+            $table->string('email')->unique();
             $table->string('admin_pass',255)->comment("密码最长为60个字节");
 
         });
