@@ -15,18 +15,18 @@ class CreateArticleTable extends Migration
     {
         //
         Schema::create('article',function(Blueprint $table){
-        $table->increments('art_id');
-        $table->string('art_title');
-        $table->text('art_tag');
-        $table->integer('art_description');
-        $table->integer('art_thumb');
-        $table->integer('art_content');
-        $table->integer('art_time');
-        $table->integer('art_editor');
-        $table->integer('art_view');
-        $table->integer('cate_id');
 
-        $table->timestamps();            
+
+            $table->increments('art_id');
+            $table->string('art_title')->comment('标题');
+            $table->string('art_tag')->nullable($value=true)->comment('关键词');
+            $table->string('art_description')->comment('描述')->nullable($value=true);
+            $table->string('art_thumb')->comment('图片')->nullable($value=true);
+            $table->text('art_content')->comment('内容');
+            $table->integer('art_time')->comment('添加时间');
+            $table->string('art_editor')->comment('作者')->nullable($value=true);
+            $table->unsignedInteger('art_view')->comment('查看次数')->default(0);
+            $table->unsignedInteger('cate_id')->comment('目录名称');
     });
     }
 
