@@ -63,6 +63,28 @@
                     <th>缩略图：</th>
                     <td>
                         <input type="text" size="50" name="art_thumb">
+                        <input id="file_upload" name="file_upload" type="file" multiple="true">
+                        <script src="{{asset('admin/uploadify/jquery.uploadify.min.js')}}" type="text/javascript"></script>
+                        <link rel="stylesheet" type="text/css" href="{{asset('admin/uploadify/uploadify.css')}}">
+                        <script type="text/javascript">
+                            <?php $timestamp = time();?>
+$(function() {
+                                $('#file_upload').uploadify({
+                                    'buttonText' : '图片上传',
+                                    'formData'     : {
+                                        'timestamp' : '<?php echo $timestamp;?>',
+                                        '_token'     : "{{csrf_token()}}"
+                                    },
+                                    'swf'      : "{{asset('admin/uploadify/uploadify.swf')}}",
+                                    'uploader' : "{{url('admin/upload')}}"
+                                });
+                            });
+                        </script>
+                        <style>
+                            .uploadify{display:inline-block;}
+                            .uploadify-button{border:none; border-radius:5px; margin-top:8px;}
+                            table.add_tab tr td span.uploadify-button-text{color: #FFF; margin:0;}
+                        </style>
                     </td>
                 </tr>
                 <tr>
@@ -81,9 +103,9 @@
                 <tr>
                     <th>文章内容：</th>
                     <td>
-                        <script type="text/javascript" charset="utf-8" src="{{asset('../admin/ueditor/ueditor.config.js')}}"></script>
-                        <script type="text/javascript" charset="utf-8" src="{{asset('../admin/ueditor/ueditor.all.min.js')}}"> </script>
-                        <script type="text/javascript" charset="utf-8" src="{{asset('../admin/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+                        <script type="text/javascript" charset="utf-8" src="{{asset('admin/ueditor/ueditor.config.js')}}"></script>
+                        <script type="text/javascript" charset="utf-8" src="{{asset('admin/ueditor/ueditor.all.min.js')}}"> </script>
+                        <script type="text/javascript" charset="utf-8" src="{{asset('admin/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
                         <script id="editor" name="art_content" type="text/plain" style="width:860px;height:500px;"></script>
                         <script type="text/javascript">
                         var ue = UE.getEditor('editor');
