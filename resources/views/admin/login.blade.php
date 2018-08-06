@@ -17,11 +17,11 @@
 				{{csrf_field()}}
 				<ul>
 					<li>
-						<input type="text" name="user_name" class="text"/>
+						<input type="text" name="admin_name" class="text"/>
 						<span><i class="fa fa-user"></i></span>
 					</li>
 					<li>
-						<input type="password" name="user_pass" class="text"/>
+						<input type="password" name="admin_pass" class="text"/>
 						<span><i class="fa fa-lock"></i></span>
 					</li>
 					<li>
