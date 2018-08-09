@@ -33,5 +33,16 @@ php artisan admin:install
 就可以了
 要是不明白就来问我,免费解答,QQ1527179450
 
+db:db
+可以直接在modelfactory.php
+factory(App\User::class, 50)->create()->each(function ($u) {
+    $u->posts()->save(factory(App\Post::class)->make());
+});
 
-
+手动
+DatabaseSeeder.php 
+        DB::table('users')->insert([
+            'name' => str_random(10),
+            'email' => str_random(10).'@gmail.com',
+            'password' => bcrypt('secret'),
+        ]);

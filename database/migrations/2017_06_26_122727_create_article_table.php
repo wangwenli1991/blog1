@@ -23,10 +23,10 @@ class CreateArticleTable extends Migration
             $table->string('art_description')->comment('描述')->nullable($value=true);
             $table->string('art_thumb')->comment('图片')->nullable($value=true);
             $table->text('art_content')->comment('内容');
-            $table->integer('art_time')->comment('添加时间');
+            $table->date('art_time')->comment('添加时间');
             $table->string('art_editor')->comment('作者')->nullable($value=true);
             $table->unsignedInteger('art_view')->comment('查看次数')->default(0);
-            $table->unsignedInteger('cate_id')->comment('目录名称');
+            $table->unsignedInteger('cate_id')->default(0)->comment('目录名称');
     });
     }
 
