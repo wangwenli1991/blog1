@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
 
 //         $this->call(UsersTableSeeder::class);
-//        $this->call(ArticleSeeder::class);
-
+        $this->call(LinksTableSeeder::class);
+//
         DB::table('admin')->insert([
 //            'user_name' => str_random(10),
             'admin_name' => 'admin888',
@@ -33,6 +33,9 @@ class DatabaseSeeder extends Seeder
             'cate_view' => '0',
             'cate_pid' => '0',
         ]);
+
+
+
 
 
 //        DB::table('users')->insert([
