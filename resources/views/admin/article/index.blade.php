@@ -40,6 +40,13 @@
                             <td>
                                 <a href="#">{{$v->art_title}}</a>
                             </td>
+
+
+
+
+
+
+
                             <td>{{$v->art_view}}</td>
                             <td>{{$v->art_editor}}</td>
                             <td>{{date('Y-m-d',$v->art_time)}}</td>
