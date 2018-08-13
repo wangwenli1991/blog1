@@ -66,9 +66,9 @@
                     <th>缩略图：</th>
                     <td>
                         <input type="text" size="50" name="art_thumb" value="{{$field->art_thumb}}">
-                        <input id="file_upload" name="file_upload" type="file" multiple="true">
-                        <script src="{{asset('resources/org/uploadify/jquery.uploadify.min.js')}}" type="text/javascript"></script>
-                        <link rel="stylesheet" type="text/css" href="{{asset('resources/org/uploadify/uploadify.css')}}">
+                        <input id="file_upload" name="art_thumb" type="file" multiple="true">
+                        <script src="{{asset('admin/uploadify/jquery.uploadify.min.js')}}" type="text/javascript"></script>
+                        <link rel="stylesheet" type="text/css" href="{{asset('admin/uploadify/uploadify.css')}}">
                         <script type="text/javascript">
                             <?php $timestamp = time();?>
 $(function() {
@@ -78,7 +78,7 @@ $(function() {
                                         'timestamp' : '<?php echo $timestamp;?>',
                                         '_token'     : "{{csrf_token()}}"
                                     },
-                                    'swf'      : "{{asset('resources/org/uploadify/uploadify.swf')}}",
+                                    'swf'      : "{{asset('admin/uploadify/uploadify.swf')}}",
                                     'uploader' : "{{url('admin/upload')}}",
                                     'onUploadSuccess' : function(file, data, response) {
                                         $('input[name=art_thumb]').val(data);
@@ -116,10 +116,26 @@ $(function() {
 
                 <tr>
                     <th>文章内容：</th>
+                    {{--<td>--}}
+                    {{--<script type="text/javascript" charset="utf-8" src="{{asset('admin/ueditor.config.js')}}"></script>--}}
+                    {{--<script type="text/javascript" charset="utf-8" src="{{asset('admin/ueditor.all.min.js')}}"> </script>--}}
+                    {{--<script type="text/javascript" charset="utf-8" src="{{asset('admin/ueditor/lang/zh-cn/zh-cn.js')}}"></script>--}}
+                    {{--<script id="editor" name="art_content" type="text/plain" style="width:860px;height:500px;">{!! $field->art_content !!}</script>--}}
+                    {{--<script type="text/javascript">--}}
+                    {{--var ue = UE.getEditor('editor');--}}
+                    {{--</script>--}}
+                    {{--<style>--}}
+                    {{--.edui-default{line-height: 28px;}--}}
+                    {{--div.edui-combox-body,div.edui-button-body,div.edui-splitbutton-body--}}
+                    {{--{overflow: hidden; height:20px;}--}}
+                    {{--div.edui-box{overflow: hidden; height:22px;}--}}
+                    {{--</style>--}}
+                    {{--</td>--}}
+
                     <td>
-                        <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.config.js')}}"></script>
-                        <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.all.min.js')}}"> </script>
-                        <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+                        <script type="text/javascript" charset="utf-8" src="{{asset('admin/ueditor/ueditor.config.js')}}"></script>
+                        <script type="text/javascript" charset="utf-8" src="{{asset('admin/ueditor/ueditor.all.min.js')}}"> </script>
+                        <script type="text/javascript" charset="utf-8" src="{{asset('admin/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
                         <script id="editor" name="art_content" type="text/plain" style="width:860px;height:500px;">{!! $field->art_content !!}</script>
                         <script type="text/javascript">
                         var ue = UE.getEditor('editor');

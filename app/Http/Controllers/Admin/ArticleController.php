@@ -15,7 +15,7 @@ class ArticleController extends CommonController
     //get.admin/article  全部文章列表
     public function index()
     {
-        $data = Article::orderBy('art_id','desc')->paginate(10);
+        $data = Article::orderBy('art_id','desc')->paginate(3);
         return view('admin.article.index',compact('data'));
     }
 
@@ -67,6 +67,8 @@ class ArticleController extends CommonController
     //put.admin/article/{article}    更新文章
     public function update($art_id)
     {
+
+
         $input = Input::except('_token','_method');
         $re = Article::where('art_id',$art_id)->update($input);
         if($re){

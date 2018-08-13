@@ -22,8 +22,8 @@ class BlogCategory extends Migration
             $table->string('cate_keywords');
 
             $table->string('cate_description',255)->comment("密码最长为60个字节");
-            $table->string('cate_view');
-            $table->string('cate_order');
+            $table->string('cate_view')->default(0);
+            $table->string('cate_order')->nullable($value=true);
             $table->string('cate_pid');
 
         });
