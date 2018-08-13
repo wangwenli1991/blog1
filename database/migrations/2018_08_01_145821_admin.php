@@ -15,6 +15,7 @@ class Admin extends Migration
     {
         //
         Schema::create('admin', function (Blueprint $table) {
+            $table->engine='MyISAM';
 
 
             $table->increments('admin_id');

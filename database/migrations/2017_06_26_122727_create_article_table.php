@@ -16,6 +16,7 @@ class CreateArticleTable extends Migration
         //
         Schema::create('article',function(Blueprint $table){
 
+            $table->engine='MyISAM';
 
             $table->increments('art_id');
             $table->string('art_title')->comment('标题');

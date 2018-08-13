@@ -14,7 +14,9 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-        $table->increments('id');
+            $table->engine='MyISAM';
+
+            $table->increments('id');
         $table->string('nickname');
         $table->string('email')->nullable();
         $table->string('website')->nullable();

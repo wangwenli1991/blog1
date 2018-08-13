@@ -13,7 +13,8 @@ class BlogUser extends Migration
      */
     public function up()
     {
-        //
+        //            $table->engine='MyISAM';
+
     }
 
     /**

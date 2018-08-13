@@ -16,6 +16,7 @@ class Art extends Migration
         //
         Schema::create('blog_art', function (Blueprint $table) {
 
+            $table->engine='MyISAM';
 
             $table->text('art_title');
             $table->string('art_tag');

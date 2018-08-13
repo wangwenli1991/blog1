@@ -14,6 +14,8 @@ class CreateHomeControllersTable extends Migration
     public function up()
     {
         Schema::create('home_controllers', function (Blueprint $table) {
+            $table->engine='MyISAM';
+
             $table->increments('id');
             $table->timestamps();
         });

@@ -14,6 +14,7 @@ class BlogCategory extends Migration
     public function up()
     {
         Schema::create('category', function (Blueprint $table) {
+            $table->engine='MyISAM';
 
 
             $table->increments('cate_id');
