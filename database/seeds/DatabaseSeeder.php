@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder
 
 //         $this->call(UsersTableSeeder::class);
         $this->call(LinksTableSeeder::class);
+        $this->call(ConfigTableSeeder::class);
+        $this->call(ArticleTableSeeder::class);
+        $this->call(NavsTableSeeder::class);
 //
         DB::table('admin')->insert([
 //            'user_name' => str_random(10),
