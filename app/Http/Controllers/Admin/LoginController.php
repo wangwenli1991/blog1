@@ -35,7 +35,7 @@ class LoginController extends CommonController
             }
             session(['admin'=>$admin]);
 
-            return redirect('/admin/index');
+            return redirect('/admin');
 
         }else {
 
