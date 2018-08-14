@@ -59,7 +59,7 @@ class ConfigController extends Controller
         $str = '<?php return '.var_export($config,true).';';
         file_put_contents($path,$str);
     }
-    
+
     public function changeOrder()
     {
         $input = Input::all();

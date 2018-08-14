@@ -21,6 +21,7 @@ class NavsController extends Controller
 
     public function changeOrder()
     {
+        echo 1;die;
         $input = Input::all();
         $navs = Navs::find($input['nav_id']);
         $navs->nav_order = $input['nav_order'];
