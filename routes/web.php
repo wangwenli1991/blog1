@@ -38,3 +38,7 @@ Route::group(['middleware' => ['web','admin.login'],'prefix'=>'admin','namespace
     Route::any('upload', 'CommonController@upload');
 
 });
+
+Route::get('flash',function(){
+    return view('flash');
+});
